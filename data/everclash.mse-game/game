@@ -1,0 +1,29 @@
+﻿mse version: 2.0.0
+short name: everclash
+full name: everclash
+version: 0.0.0
+icon: icon.png
+installer group: everclash/game
+
+card field:
+	type: text
+	name: name
+	editable: true
+	description: this field is for the name of the card.
+card field:
+	type: choice
+	name: color
+	editable: true
+	description: change the cards color
+	choice: default
+	choice: magic
+	choice: air
+card field:
+	type: image
+	name: image
+	description: The card's image.
+card field:
+	type: text
+	name: rules
+	editable: true
+	description: Type the cards effects here.

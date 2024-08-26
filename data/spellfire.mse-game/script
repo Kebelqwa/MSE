@@ -1,0 +1,36 @@
+set_icon := {
+	if chosen(choice: ally) then {name := "Testing"}
+}
+
+card_number := {
+	position (
+		of: card
+		in: set
+		order_by: { sort_name(card.name) }
+		#filter:   set_filter()
+	) + 1
+}	
+sort_name :=
+	# Remove "The", "A", and "And" at the beginning
+	replace@(match: "^(The|An?) ", replace: "") +
+	# Remove commas and apostrophes
+	replace@(match: "(,|'|’)", replace: "") +
+	# Remove bold and italic tags
+	replace@(match: "(<b>|<i>|</b>|</i>)", replace: "") +
+	# Make lowercase
+	to_lower
+	
+get_type := {
+	if stylesheet.short_name == "Card" then to_title(card.cardtype)
+	else if stylesheet.short_name == "Realm" then "Realm"
+	else if stylesheet.short_name == "Dungeon" then "Dungeon"
+	else if stylesheet.short_name == "Rule" then "Rule"
+	#if 1 == 0 then "Ally"
+	else "Other"
+}
+
+card_number_full := {
+	card_number()
+	x := split_text(match: " ", card.cardnumber)
+	x[0] + " of " + number_of_items(in: set)
+}

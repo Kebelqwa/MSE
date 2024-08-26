@@ -1,0 +1,8 @@
+﻿mse version: 2.0.0
+installer group: everclash/symbol-font
+
+image font size: 125
+
+symbol:
+	code: s
+	image: spade.png

@@ -1,0 +1,197 @@
+﻿############################# Fields
+card field:
+	type: text
+	name: cardnumber
+	card list visible: true
+	card list column: 1
+	card list width: 10
+	card list name: Num
+	identifying: true
+	show statistics: false
+	description: Card set number
+	#default: number_of_items(in: set)
+	script: card_number_full(value)
+	
+	
+	
+card field:
+	type: text
+	name: name
+	card list visible: true
+	card list column: 2
+	card list width: 100
+	identifying: true
+	show statistics: false
+	multi line: true
+	description: Name of the card
+	card list name:Card Name
+	
+card field:
+	type: text
+	name: level
+	card list visible: true
+	card list column: 5
+	card list width: 10
+	identifying: false
+	show statistics: false
+	description: Level of the card
+	card list name:Level
+	
+card field:
+	type: text
+	name: totalcards
+	card list visible: false
+	card list allow: false
+	identifying: false
+	show statistics: false
+	save value: false
+	script: card_number_full()
+		#discard := card_number()
+		#" of " + number_of_items(in: set)
+		#forward_editor(prefix: " of " + number_of_items(in: set), field: #card.card_number_text)
+	description: Number of cards in the set
+	editable: false
+	
+card field:
+	type: text
+	name: card number text
+	editable: true
+	card list allow: false
+	save value: true
+	show statistics: false
+
+############################# Images
+card field:
+	type: image
+	name: cardart
+	show statistics: false
+	description: Art for the card
+	card list name: Card Art
+	
+card field:
+	type: choice
+	name: textframe
+	choice: general
+	initial: general
+	show statistics: false
+	editable: false
+	card list allow: false
+
+card field:
+	type: choice
+	name: realm icon
+	choice: general
+	initial: general
+	show statistics: false
+	editable: false
+	card list allow: false
+
+############################# Text box
+card field:
+	type: text
+	name: gametext
+	show statistics: false
+	multi line: true
+	description: Game text for the card
+	card list name: Game Text
+
+
+############################# Card Type	
+card field:
+	type: choice
+	name: cardtype
+	icon: icons/ally.png
+	position hint: 100
+	choice: ally
+	choice: artifact
+	choice: bloodline
+	choice: bloodline power
+	#choice: clockwork
+	#choice: clockwork power
+	choice: holding
+	choice: hero
+	choice: cleric
+	choice: cleric spell
+	choice: combat skill
+	choice: event
+	choice: magic item
+	choice: monster
+	choice: monster power
+	choice: psionicist
+	choice: psionic power
+	#choice: realm
+	choice: thief
+	choice: thief skill
+	choice: wizard
+	choice: wizard spell
+	initial: ally
+	card list visible: true
+	card list column: 3
+	card list width: 50
+	#script: set_icon(value)
+	description: The type of card to create
+	card list allow: false
+	
+############################# World
+card field:
+	type: choice
+	name: world
+	icon: logo/ADnD.png
+	position hint: 100
+	choice: Generic
+	choice: Birthright
+	choice: Dark Sun
+	choice: Dragonlance
+	choice: Forgotten Realms
+	choice: Greyhawk
+	choice: PlaneScape
+	#choice: RaJin
+	choice: Ravenloft
+	initial: Generic
+	card list visible: true
+	card list column: 4
+	card list width: 100
+	#script: set_icon(value)
+	description: The world associated with the card
+	
+############################# Set
+card field:
+	type: choice
+	name: setlogo
+	position hint: 100
+	choice: Generic
+	initial: Generic
+	card list visible: true
+	card list column: 5
+	card list width: 100
+	show statistics: false
+	editable: false
+	card list allow: false
+	
+card field:
+	type: choice
+	name: set icon
+	choice: icon
+	save value: false
+	editable: false
+	card list allow: false
+	
+card field:
+	type: text
+	name: type
+	editable: false
+	card list visible: true
+	card list column: 3
+	card list width: 20
+	visible: false
+	identifying: false
+	save value: false
+	default: get_type()
+	
+card field:
+	type: text
+	name: artist
+	show statistics: false
+	multi line: false
+	description: Name of Artist
+	card list name: Artist

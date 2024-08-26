@@ -1,0 +1,39 @@
+﻿mse version: 2.0.0
+short name: Spellfire
+full name: Spellfire
+installer group: spellfire/game files
+icon: logo.jpg
+position hint: 01
+
+version: 2020-05-20
+
+
+############################################################## The script
+
+init script: include file: script
+
+############################################################## Lots of lists
+
+################## There be dragons here. -Liosan ##########################
+
+include file: card_fields
+
+
+
+############################################################## Other stuff
+set_field:
+	type:			boolean
+	name:			use_custom_icon
+	initial:		no
+	description:	Use Custom Icon (below)
+	
+set field:
+	type:			image
+	name:			set_icon
+	description:	Set Icon as shown on the cards (195px * 37px)
+	
+default_set_style:
+	set_icon:
+		width:		{ 120 }
+		height:		{ 30 }
+		default:	{ "/spellfire.mse-game/setlogo.png" }

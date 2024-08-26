@@ -1,0 +1,200 @@
+﻿mse version: 2.0.0
+game: spellfire
+short name: Realm
+full name: Spellfire Realm
+icon: sample.jpg
+installer group: spellfire/realm
+position hint: 002
+
+version: 2020-05-27
+depends on:
+	package: spellfire.mse-game
+	version: 2020-05-20
+
+card width: 700
+card height: 500
+card dpi: 200
+
+
+############################################################## Card fields
+card style:
+	cardnumber:
+		left: 518
+			#script:
+			#	if number_of_items(in: set) < 10 then 548
+			#	else if number_of_items(in: set) < 100 then 538
+			#	else if number_of_items(in: set) < 1000 then 528
+			#	else 518
+		top: 455
+		width: 144 #72
+		height: 25
+		alignment: middle right
+		padding bottom: 0
+		z index: 3
+		font:
+			name: Spellfire
+			italic name: Spellfire-Italic
+			size: 18
+			#scale down to: 1
+			color: black
+		tab index: 5
+	
+	totalcards:
+		left: 
+			script:
+				if number_of_items(in: set) < 10 then 620
+				else if number_of_items(in: set) < 100 then 610
+				else if number_of_items(in: set) < 1000 then 600
+				else 590
+		top: 455
+		width: 
+			script:
+				if number_of_items(in: set) < 10 then 42
+				else if number_of_items(in: set) < 100 then 52
+				else if number_of_items(in: set) < 1000 then 62
+				else 72
+		height: 25
+		alignment: middle right
+		padding bottom: 0
+		z index: 3
+		font:
+			name: Spellfire
+			italic name: Spellfire-Italic
+			size: 18
+			color: black
+		visible: false
+	
+	name:
+		left: 384
+		top: 303
+		width: 280
+		height: 70
+		alignment: right top
+		font:
+			name: Spellfire
+			italic name: Spellfire-Italic
+			size: 26
+			scale down to: 18
+			color: black
+		z index: 3
+		padding left:   6
+		padding right:  6
+		line height hard: 1.2
+		line height line: 1.5
+		line height soft: 0.9
+		line height hard max: 1.3
+		line height line max: 1.6
+		tab index: 3
+		
+	artist:
+		left: 223
+		top: 460
+		width: 160
+		height: 16
+		alignment: left middle
+		font:
+			name: Spellfire
+			italic name: Spellfire-Italic
+			size: 9
+			scale down to: 9
+			color: white
+		z index: 5
+		padding left:   6
+		
+	############################# Level 
+	level:
+		left: 43
+		top: 428
+		width: 60
+		height: 34
+		alignment: top center
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Spellfire
+			italic name: Spellfire-Italic
+			size: 20
+			color: white
+		tab index: 1
+
+	
+	############################# Images
+	cardart:
+		left: 0
+		top: 0
+		width: 700
+		height:	500
+		z index: -1
+		default: default.jpg
+	
+	textframe:
+		left: 214
+		top: 303
+		width: 456
+		height:	180
+		z index: 0
+		choice images:
+			general: textframe.jpg
+		render style: image
+		
+	realm icon:
+		left: 16
+		top: 364
+		width: 113
+		height:	118
+		z index: 1
+		choice images:
+			general: icons\realm.png
+		render style: image
+
+	world:
+		left: 214
+		top: 303
+		width: 270
+		height:	70
+		z index: 4
+		choice images:
+			Generic: logo\ADnD.png
+			Birthright: logo\Birthright.png
+			Dark Sun: logo\DarkSun.png
+			Dragonlance: logo\Dragonlance.png
+			Forgotten Realms: logo\ForgottenRealms.png
+			Greyhawk: logo\Greyhawk.png
+			PlaneScape: logo\PlaneScape.png
+			#RaJin: logo\RaJin.png
+			Ravenloft: logo\Ravenloft.png
+		render style: image
+		tab index: 2
+	
+	set icon:
+		left: 382
+		top : 449
+		width: 120
+		height: 30
+		z index: 7
+		render style: image
+		image: {if set.use_custom_icon then set.set_icon else "/spellfire.mse-game/setlogo.png" }
+	
+	############################# Text box
+	gametext:
+		left: 222
+		top: 373
+		width: 431
+		height: 82
+		font:
+			name: Spellfire
+			italic name: Spellfire-Italic
+			size: 18
+			scale down to: 10
+			color: black
+		alignment: middle center
+		z index: 3
+		padding left:   6
+		padding right:  6
+		line height hard: 1.2
+		line height line: 1.5
+		line height soft: 0.9
+		line height hard max: 1.3
+		line height line max: 1.6
+		tab index: 4
+		
