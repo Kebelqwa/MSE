@@ -249,8 +249,8 @@ card style:
 			color: white
 	casting cost:
 		left: 21
-		top: { 45 + card_style.casting_cost.content_width }
-		width: { max(30, card_style.casting_cost.content_width) + 5 }
+		top: {max(60, 40+(card_style.casting_cost.content_width/2))}
+		width: { max(20, card_style.casting_cost.content_width/2)}
 		height: 23
 		angle: 90
 		alignment: middle right
