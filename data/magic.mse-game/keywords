@@ -1795,9 +1795,161 @@ keyword:
 	match: finality counter
 	mode: core
 	reminder: If a creature with a finality counter would die, exile it instead.
+# Murders at Karlov Manor
+keyword:
+	keyword: Cloak
+	match: cloak
+	mode: action
+	reminder: To cloak a card, put it onto the battlefield face down as a 2/2 creature with ward [2]. Turn it face up any time for its mana cost if it's a creature card.
+keyword:
+	keyword: Collect evidence
+	match: collect evidence <atom-param>number</atom-param>
+	mode: action
+	reminder: Exile cards with total mana value {param1} or greater from your graveyard.
+keyword:
+	keyword: Disguise
+	match: Disguise <atom-param>cost</atom-param>
+	mode: expert
+	reminder: You may cast this card face down for [3] as a 2/2 creature with ward [2]. Turn it face up any time for its disguise cost.
+keyword:
+	keyword: Suspect
+	match: suspect
+	mode: action
+	reminder: A suspected creature has menace and can’t block.
 # Fallout
 keyword:
 	keyword: Junk token
 	match: Junk toke<atom-param>*s</atom-param>
 	mode: expert
 	reminder: {if param1.value == "ns" then "They’re artifacts" else "It’s an artifact"} with "T, Sacrifice this artifact: Exile the top card of your library. You may play that card this turn. Activate only as a sorcery."
+# Assassin's Creed
+keyword:
+	keyword: Freerunning
+	match: Freerunning <atom-param>cost</atom-param>
+	mode: expert
+	reminder: You may cast this spell for its freerunning cost if you dealt combat damage to a player this turn with an Assassin or commander.
+# Outlaws of Thunder Junction
+keyword:
+	keyword: commit a crime
+	match: crime
+	mode: expert
+	reminder: Targeting opponents, anything they control, and/or cards in their graveyards is a crime.
+keyword:
+	keyword: Outlaw
+	match: outlaw
+	mode: action
+	reminder: Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.
+keyword:
+	keyword: Outlaws
+	match: outlaws
+	mode: action
+	reminder: Assassins, Mercenaries, Pirates, Rogues, and Warlocks are outlaws.
+keyword:
+	keyword: Plot
+	match: Plot <atom-param>cost</atom-param>
+	mode: expert
+	reminder: You may {for_mana_costs(add:"pay ", param1)} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.
+keyword:
+	keyword: becomes plotted
+	match: becom<atom-param>*s</atom-param> plotted
+	mode: expert
+	reminder: You may cast it as a sorcery on a later turn without paying its mana cost.
+keyword:
+	keyword: Saddle
+	match: Saddle <atom-param>number</atom-param>
+	mode: expert
+	reminder: Tap any number of other creatures you control with total power {param1} or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.
+keyword:
+	keyword: Spree
+	match: Spree
+	mode: expert
+	reminder: Choose one or more additional costs.
+# Modern Horizons 3
+keyword:
+	keyword: Emerge from
+	match: Emerge <atom-param>cost</atom-param> from <atom-param>name</atom-param>
+	mode: expert
+	reminder: You may cast this spell by sacrificing a {param2} and paying the emerge cost reduced by that {param2}'s mana value.
+# Bloomburrow
+keyword:
+	keyword: expend
+	match: expend <atom-param>number</atom-param>
+	mode: action
+	reminder: You expend {param1} as you spend your {english_number_ordinal(param1)} total mana to cast spells during a turn.
+keyword:
+	keyword: forage
+	match: forage
+	mode: action
+	reminder: Exile three cards from your graveyard or sacrifice a Food.
+keyword:
+	keyword: forage
+	match: foraging
+	mode: action
+	reminder: Exile three cards from your graveyard or sacrifice a Food.
+keyword:
+	keyword: Gift a card
+	match: Gift a card
+	mode: expert
+	reminder: You may promise an opponent a gift as you cast this spell. If you do, {if not is_spell(card.super_type) then "when it enters, they" else "they"} draw a card{if is_spell(card.super_type) then " before its other effects." else "."}
+keyword:
+	keyword: Gift a tapped Fish
+	match: Gift a tapped Fish
+	mode: expert
+	reminder: You may promise an opponent a gift as you cast this spell. If you do, {if not is_spell(card.super_type) then "when it enters, they" else "they"} create a tapped 1/1 blue Fish creature token{if is_spell(card.super_type) then " before its other effects." else "."}
+keyword:
+	keyword: Gift a Food
+	match: Gift a Food
+	mode: expert
+	reminder: You may promise an opponent a gift as you cast this spell. If you do, {if not is_spell(card.super_type) then "when it enters, they" else "they"} create a Food token{if is_spell(card.super_type) then " before its other effects." else "."} It's an artifact with "[2], [T], Sacrifice this artifact: You gain 3 life."
+keyword:
+	keyword: Gift a Treasure
+	match: Gift a Treasure
+	mode: expert
+	reminder: You may promise an opponent a gift as you cast this spell. If you do, {if not is_spell(card.super_type) then "when it enters, they" else "they"} create a Treasure token{if is_spell(card.super_type) then " before its other effects." else "."} It's an artifact with "[T], Sacrifice this artifact: Add one mana of any color."
+keyword:
+	keyword: Gift an Octopus
+	match: Gift an Octopus
+	mode: expert
+	reminder: You may promise an opponent a gift as you cast this spell. If you do, {if not is_spell(card.super_type) then "when it enters, they" else "they"} create an 8/8 blue Octopus creature token{if is_spell(card.super_type) then " before its other effects." else "."}
+keyword:
+	keyword: Gift an extra turn
+	match: Gift an extra turn
+	mode: expert
+	reminder: You may promise an opponent a gift as you cast this spell. If you do, {if not is_spell(card.super_type) then "when it enters, they" else "they"} take an extra turn after this one.
+keyword:
+	keyword: Offspring
+	match: Offspring <atom-param>cost</atom-param>
+	mode: expert
+	reminder: You may {for_mana_costs(add:"pay an additional ", param1)} as you cast this spell. If you do, when this creature enters, create a 1/1 token copy of it.
+keyword:
+	keyword: Valiant
+	match: Valiant
+	mode: pseudo
+	rules: Valiant — Whenever ~ becomes the target of a spell or ability you control for the first time each turn, [effect].
+#Duskmourn
+keyword: 
+	keyword: Impending
+	match: Impending <atom-param>number</atom-param>—<atom-param>cost</atom-param>
+	mode: expert
+	reminder: If you cast this spell for its impending cost, it enters with {english_number_a(param1)} time counter(s) and isn't a creature until the last is removed. At the beginning of your end step, remove a time counter from it.
+keyword:
+	keyword: Manifest dread
+	match: manifest dread
+	mode: expert
+	reminder: Look at the top two cards of your library, then put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.
+keyword:
+	keyword: Manifests dread
+	match: manifests dread
+	mode: expert
+	reminder: That player looks at the top two cards of their library, then puts one onto the battlefield face down as a 2/2 creature and the other into their graveyard. If it's a creature card, it can be turned face up any time for its mana cost.
+keyword:
+	keyword: Eerie
+	match: Eerie
+	mode: pseudo
+	rules: Eerie — Whenever an enchantment you control enters and whenever you fully unlock a Room, [effect].
+keyword:
+	keyword: Survival
+	match: Survival
+	mode: pseudo
+	rules: Survival — At the beginning of your second main phase, if ~ is tapped, [effect].
+	
